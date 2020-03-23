@@ -13,7 +13,7 @@ public:
   ~mywork();
   void do_work(int param);
 private:
-//  int recal_param(int param);
+  int recal_param(int param);
   class mywork_impl;
   std::unique_ptr<mywork_impl> pimpl_;
 };

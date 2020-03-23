@@ -17,9 +17,11 @@ mywork::mywork() : pimpl_(std::make_unique<mywork::mywork_impl>()) {}
 
 mywork::~mywork() = default;
 
-void mywork::do_work(int param) { pimpl_->do_mywork_imp(param); }
+void mywork::do_work(int param) {
+  std::cout << "internal impl of mywork param " << recal_param(param) << std::endl;
+}
 
-//int mywork::recal_param(int param) { return ++param; }
+int mywork::recal_param(int param) { return ++param; }
 
 void mywork::mywork_impl::do_mywork_imp(int param) {
   std::cout << "internal impl of mywork param " << param << std::endl;
